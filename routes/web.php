@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\employeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('template');
 });
+
+
+// Llamamos al método index del controlador employeesController
+Route::get('/empleados_activos', [employeeController::class, 'index']);
+
